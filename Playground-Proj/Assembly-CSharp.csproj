@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DebugManager.cs" />
+     <Compile Include="Assets\Scripts\PlatformController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/booka/OneDrive/Documents/GitHub/Playground/Playground-Proj/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

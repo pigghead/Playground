@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		moveSpeed = 5.0f;
 		turnSpeed = 5.0f;
-		jumpForce = 8.0f;
+		jumpForce = 5.0f;
 	}
 
 	#region PLAYER_MECHANICS
