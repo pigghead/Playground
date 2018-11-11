@@ -8,9 +8,13 @@ public class PlatformController : MonoBehaviour {
 	private float moveSpeed;	// Speed in which PC moves
 	private float jumpForce;	// force in which PC jumps
 
+	public Vector3 header;
+	private Vector3 velocity;
+	private Vector3 lastPosition;
+
 	// Use this for initialization
 	void Start () {
-		moveSpeed = 5.0f;
+		moveSpeed = 3.0f;
 		jumpForce = 3.0f;
 	}
 
@@ -27,8 +31,17 @@ public class PlatformController : MonoBehaviour {
 		}
 	}
 
+	void CollisionDetection() {
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 		PlayerActions ();
+
+		velocity = (transform.position - lastPosition) / Time.deltaTime;
+		lastPosition = transform.position;
+
+		header = velocity;
 	}
 }

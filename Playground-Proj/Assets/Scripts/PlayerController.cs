@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
 	private float turnSpeed;
 	private float jumpForce;
 
+	public Vector3 velocity;
+	private Vector3 lastPosition;
+
 
 	// Use this for initialization
 	void Start () {
@@ -69,5 +72,8 @@ public class PlayerController : MonoBehaviour {
 		JumpPlayer ();
 		RotatePlayer ();
 		ZoomPlayer ();
+
+		lastPosition = this.transform.position;
+		velocity = (this.transform.position - lastPosition);
 	}
 }

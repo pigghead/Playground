@@ -6,6 +6,7 @@ public class DebugManager : MonoBehaviour {
 	// PRIVATE
 	[SerializeField] private bool debugEnabled;
 	private GameObject playerCharacter;
+	//private Ray r;
 
 	// Use this for initialization
 	void Start () {
@@ -23,13 +24,15 @@ public class DebugManager : MonoBehaviour {
 	void OnDrawGizmos() {
 		if (debugEnabled == true) {
 			Gizmos.color = Color.green;
-			//Gizmos.DrawWireCube (playerCharacter.transform.position, new Vector3(0.7f, 0.7f, 0.7f));
 			Gizmos.DrawWireMesh(
 				playerCharacter.GetComponent<MeshFilter>().mesh, 
 				playerCharacter.transform.position, 
 				Quaternion.identity, 
 				Vector3.one
 			);
+
+			Gizmos.color = Color.blue;
+			Gizmos.DrawLine (playerCharacter.transform.position, playerCharacter.transform.position + playerCharacter.GetComponent<PlatformController>().header);
 		}
 	}
 
