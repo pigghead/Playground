@@ -14,15 +14,24 @@ public class PlatformController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveSpeed = 3.0f;
-		jumpForce = 3.0f;
+		moveSpeed = 5.0f;
+		jumpForce = 5.0f;
 	}
 
 	void PlayerActions() {
 		// Moving
-		float xMov = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+		float h = Input.GetAxisRaw("Horizontal");
+		Vector3 tV3 = new Vector3 (h, 0, 0);
+		tV3 = tV3.normalized * moveSpeed * Time.deltaTime;
 
-		this.transform.Translate (xMov, 0, 0);
+		if (Input.GetKey(KeyCode.D)) {
+			this.gameObject.GetComponent<Rigidbody> ().MovePosition (this.gameObject.transform.position + tV3);
+		}
+
+		if (Input.GetKey(KeyCode.A)) {
+			tV3 = -tV3;
+			this.gameObject.GetComponent<Rigidbody> ().MovePosition (this.gameObject.transform.position - tV3);
+		}
 
 		// Jumping
 		if (Input.GetKeyDown(KeyCode.Space)) {
