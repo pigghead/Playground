@@ -24,6 +24,7 @@ public class TeleportManager : MonoBehaviour {
 		tIn = GameObject.FindGameObjectWithTag ("tIn");
 		tOut = GameObject.FindGameObjectWithTag ("tOut");
 
+		// Get the colliders to each GameObject
 		playerCollider = playerCharacter.GetComponent<Collider> ();
 		inCollider = tIn.GetComponent<Collider> ();
 		outCollider = tOut.GetComponent<Collider> ();
@@ -32,13 +33,13 @@ public class TeleportManager : MonoBehaviour {
 	}
 
 	void OnewayTeleport() {
-		if (intersectionMan.AABBIntersection(playerCollider, outCollider)) {
-			Debug.Log ("We got an intersection!");
+		if (intersectionMan.AABBIntersection(playerCollider, inCollider)) {
+			playerCollider.gameObject.transform.position = tOut.transform.position + offset;
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		OnewayTeleport ();
 	}
 }

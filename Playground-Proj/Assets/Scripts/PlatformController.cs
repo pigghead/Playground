@@ -36,7 +36,6 @@ public class PlatformController : MonoBehaviour {
 		// Jumping
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			this.gameObject.GetComponent<Rigidbody> ().AddForce (new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-			Debug.Log ("Jump: " + jumpForce);
 		}
 	}
 
@@ -46,11 +45,14 @@ public class PlatformController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		PlayerActions ();
-
 		velocity = (transform.position - lastPosition) / Time.deltaTime;
 		lastPosition = transform.position;
 
 		header = velocity;
+	}
+
+	// called every fixed framerate frame
+	void FixedUpdate() {
+		PlayerActions ();
 	}
 }
