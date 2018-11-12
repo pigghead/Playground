@@ -1,9 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlatformController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EventManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="17" Column="16" />
-      <File FileName="Assets\Scripts\PlatformController.cs" Line="14" Column="17" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="77" Column="3" />
+      <File FileName="Assets\Scripts\PlatformController.cs" Line="54" Column="39" />
+      <File FileName="Assets\Scripts\DebugManager.cs" Line="8" Column="37" />
+      <File FileName="Assets\Scripts\TeleportManager.cs" Line="37" Column="84" />
+      <File FileName="Assets\Scripts\IntersectionManager.cs" Line="8" Column="31" />
+      <File FileName="Assets\Scripts\EventManager.cs" Line="4" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
